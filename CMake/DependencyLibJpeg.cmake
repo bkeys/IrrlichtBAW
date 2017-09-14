@@ -8,7 +8,7 @@ ExternalProject_Add(libjpeg
 set(LIBJPEG_INCLUDE_DIR "${CMAKE_BINARY_DIR}/")
 set(LIBJPEG_LIBRARY "${CMAKE_BINARY_DIR}/")
 
-include_directories(SYSTEM ${_INCLUDE_DIR})
+include_directories(SYSTEM ${LIBJPEG_INCLUDE_DIR})
 
 set(DMUX_DEPENDENCY_LIBRARIES
     ${DMUX_DEPENDENCY_LIBRARIES}

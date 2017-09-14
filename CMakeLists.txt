@@ -11,7 +11,7 @@ set(CMAKE_MODULE_PATH
 
 include(DependencyZlib)
 include(DependencyBzip2)
-include(DependencyLibJpeg)
+#include(DependencyLibJpeg)
 include(DependencyLibPng)
 set(SOURCE_FILES
 #source/Irrlicht/C3DSMeshFileLoader.cpp
@@ -174,52 +174,52 @@ source/Irrlicht/bzip2/huffman
 source/Irrlicht/bzip2/randtable
 source/Irrlicht/convert_utf/ConvertUTF
 source/Irrlicht/coreutil.cpp
-source/Irrlicht/jpeglib/jaricom
-source/Irrlicht/jpeglib/jcapimin
-source/Irrlicht/jpeglib/jcapistd
-source/Irrlicht/jpeglib/jcarith
-source/Irrlicht/jpeglib/jccoefct
-source/Irrlicht/jpeglib/jccolor
-source/Irrlicht/jpeglib/jcdctmgr
-source/Irrlicht/jpeglib/jchuff
-source/Irrlicht/jpeglib/jcinit
-source/Irrlicht/jpeglib/jcmainct
-source/Irrlicht/jpeglib/jcmarker
-source/Irrlicht/jpeglib/jcmaster
-source/Irrlicht/jpeglib/jcomapi
-source/Irrlicht/jpeglib/jcparam
-source/Irrlicht/jpeglib/jcprepct
-source/Irrlicht/jpeglib/jcsample
-source/Irrlicht/jpeglib/jctrans
-source/Irrlicht/jpeglib/jdapimin
-source/Irrlicht/jpeglib/jdapistd
-source/Irrlicht/jpeglib/jdarith
-source/Irrlicht/jpeglib/jdatadst
-source/Irrlicht/jpeglib/jdatasrc
-source/Irrlicht/jpeglib/jdcoefct
-source/Irrlicht/jpeglib/jdcolor
-source/Irrlicht/jpeglib/jddctmgr
-source/Irrlicht/jpeglib/jdhuff
-source/Irrlicht/jpeglib/jdinput
-source/Irrlicht/jpeglib/jdmainct
-source/Irrlicht/jpeglib/jdmarker
-source/Irrlicht/jpeglib/jdmaster
-source/Irrlicht/jpeglib/jdmerge
-source/Irrlicht/jpeglib/jdpostct
-source/Irrlicht/jpeglib/jdsample
-source/Irrlicht/jpeglib/jdtrans
-source/Irrlicht/jpeglib/jerror
-source/Irrlicht/jpeglib/jfdctflt
-source/Irrlicht/jpeglib/jfdctfst
-source/Irrlicht/jpeglib/jfdctint
-source/Irrlicht/jpeglib/jidctflt
-source/Irrlicht/jpeglib/jidctfst
-source/Irrlicht/jpeglib/jidctint
-source/Irrlicht/jpeglib/jmemmgr
-source/Irrlicht/jpeglib/jmemnobs
-source/Irrlicht/jpeglib/jquant1
-source/Irrlicht/jpeglib/jquant2
-source/Irrlicht/jpeglib/jutils
+#source/Irrlicht/jpeglib/jaricom
+#source/Irrlicht/jpeglib/jcapimin
+#source/Irrlicht/jpeglib/jcapistd
+#source/Irrlicht/jpeglib/jcarith
+#source/Irrlicht/jpeglib/jccoefct
+#source/Irrlicht/jpeglib/jccolor
+#source/Irrlicht/jpeglib/jcdctmgr
+#source/Irrlicht/jpeglib/jchuff
+#source/Irrlicht/jpeglib/jcinit
+#source/Irrlicht/jpeglib/jcmainct
+#source/Irrlicht/jpeglib/jcmarker
+#source/Irrlicht/jpeglib/jcmaster
+#source/Irrlicht/jpeglib/jcomapi
+#source/Irrlicht/jpeglib/jcparam
+#source/Irrlicht/jpeglib/jcprepct
+#source/Irrlicht/jpeglib/jcsample
+#source/Irrlicht/jpeglib/jctrans
+#source/Irrlicht/jpeglib/jdapimin
+#source/Irrlicht/jpeglib/jdapistd
+#source/Irrlicht/jpeglib/jdarith
+#source/Irrlicht/jpeglib/jdatadst
+#source/Irrlicht/jpeglib/jdatasrc
+#source/Irrlicht/jpeglib/jdcoefct
+#source/Irrlicht/jpeglib/jdcolor
+#source/Irrlicht/jpeglib/jddctmgr
+#source/Irrlicht/jpeglib/jdhuff
+#source/Irrlicht/jpeglib/jdinput
+#source/Irrlicht/jpeglib/jdmainct
+#source/Irrlicht/jpeglib/jdmarker
+#source/Irrlicht/jpeglib/jdmaster
+#source/Irrlicht/jpeglib/jdmerge
+#source/Irrlicht/jpeglib/jdpostct
+#source/Irrlicht/jpeglib/jdsample
+#source/Irrlicht/jpeglib/jdtrans
+#source/Irrlicht/jpeglib/jerror
+#source/Irrlicht/jpeglib/jfdctflt
+#source/Irrlicht/jpeglib/jfdctfst
+#source/Irrlicht/jpeglib/jfdctint
+#source/Irrlicht/jpeglib/jidctflt
+#source/Irrlicht/jpeglib/jidctfst
+#source/Irrlicht/jpeglib/jidctint
+#source/Irrlicht/jpeglib/jmemmgr
+#source/Irrlicht/jpeglib/jmemnobs
+#source/Irrlicht/jpeglib/jquant1
+#source/Irrlicht/jpeglib/jquant2
+#source/Irrlicht/jpeglib/jutils
 source/Irrlicht/libpng/png
 source/Irrlicht/libpng/pngerror
 source/Irrlicht/libpng/pngget
@@ -250,9 +250,10 @@ source/Irrlicht/zlib/zutil
 )
 
 include_directories(
-        ${CMAKE_SOURCE_DIR}/include
-        ${CMAKE_SOURCE_DIR}/source/Irrlicht/utf8/source
-        ${CMAKE_SOURCE_DIR}/source/Irrlicht/convert_utf
+  SYSTEM ${CMAKE_SOURCE_DIR}/include
+  SYSTEM ${LIBJPEG_INCLUDE_DIR}
+  SYSTEM ${CMAKE_SOURCE_DIR}/source/Irrlicht/utf8/source
+  SYSTEM ${CMAKE_SOURCE_DIR}/source/Irrlicht/convert_utf
 )
 
 #aesGladman
