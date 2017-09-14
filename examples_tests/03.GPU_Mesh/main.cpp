@@ -1,6 +1,7 @@
 #include <irrlicht.h>
 #include "driverChoice.h"
-
+#include <iostream>
+#include <string>
 
 using namespace irr;
 using namespace core;
@@ -100,9 +101,9 @@ int main()
     //! First need to make a material other than default to be able to draw with custom shader
     video::SMaterial material;
     material.BackfaceCulling = false; //! Triangles will be visible from both sides
-    material.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../mesh.vert",
+    material.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("mesh.vert",
                                                         "","","", //! No Geometry or Tessellation Shaders
-                                                        "../mesh.frag",
+                                                        "mesh.frag",
                                                         3,video::EMT_SOLID, //! 3 vertices per primitive (this is tessellation shader relevant only
                                                         callBack,
                                                         0); //! No custom user data
@@ -122,15 +123,15 @@ int main()
 	{
         case '1':
             smgr->addSkyBoxSceneNode(
-                driver->getTexture("../../media/irrlicht2_up.jpg"),
-                driver->getTexture("../../media/irrlicht2_dn.jpg"),
-                driver->getTexture("../../media/irrlicht2_lf.jpg"),
-                driver->getTexture("../../media/irrlicht2_rt.jpg"),
-                driver->getTexture("../../media/irrlicht2_ft.jpg"),
-                driver->getTexture("../../media/irrlicht2_bk.jpg"));
+                driver->getTexture("../media/irrlicht2_up.jpg"),
+                driver->getTexture("../media/irrlicht2_dn.jpg"),
+                driver->getTexture("../media/irrlicht2_lf.jpg"),
+                driver->getTexture("../media/irrlicht2_rt.jpg"),
+                driver->getTexture("../media/irrlicht2_ft.jpg"),
+                driver->getTexture("../media/irrlicht2_bk.jpg"));
             break;
         default:
-            smgr->addSkyDomeSceneNode(driver->getTexture("../../media/skydome.jpg"),16,8,0.95f,2.0f,10.f);
+            smgr->addSkyDomeSceneNode(driver->getTexture("../media/skydome.jpg"),16,8,0.95f,2.0f,10.f);
             break;
 	}
 
@@ -159,7 +160,7 @@ int main()
 	device->setEventReceiver(&receiver);
 
 	uint64_t lastFPSTime = 0;
-	printf("%d\n",sizeof(VertexStruct));
+	std:: cout << sizeof(VertexStruct) << std::endl;
 
 	while(device->run())
 	//if (device->isWindowActive())
@@ -258,9 +259,9 @@ int main()
 			stringw str = L"GPU Mesh Demo - Irrlicht Engine [";
 			str += driver->getName();
 			str += "] FPS:";
-			str += driver->getFPS();
+			str += std::to_string(driver->getFPS()).c_str();
 			str += " PrimitvesDrawn:";
-			str += driver->getPrimitiveCountDrawn();
+			str += std::to_string(driver->getPrimitiveCountDrawn()).c_str();
 
 			device->setWindowCaption(str.c_str());
 			lastFPSTime = time;

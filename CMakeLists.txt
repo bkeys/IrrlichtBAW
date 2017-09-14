@@ -7,6 +7,7 @@ set(CMAKE_MODULE_PATH
         ${CMAKE_MODULE_PATH}
         ${CMAKE_SOURCE_DIR}/CMake
         ${CMAKE_SOURCE_DIR}/CMake/Dependencies
+        ${CMAKE_SOURCE_DIR}/examples_test
 )
 
 find_package(OpenGL REQUIRED)
@@ -14,7 +15,6 @@ include(DependencyBzip2)
 include(DependencyLibJpeg)
 include(DependencyLibPng)
 include(DependencyZlib)
-include(find_unwind)
 
 # Make an option to not build examples
 include(Examples)
@@ -179,25 +179,7 @@ include_directories(
   SYSTEM ${CMAKE_SOURCE_DIR}/source/Irrlicht/convert_utf
 )
 
-#aesGladman
-#utf8
-#unwind
-
-#include(CTest)
-#enable_testing()
-
 set(CMAKE_CXX_FLAGS "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-pointer -fno-exceptions -fuse-ld=gold -msse3 -ggdb3 -std=c++03 -fstack-protector-strong -D_IRR_STATIC_LIB_ -D_DEBUG -fuse-ld=gold -fstack-protector-strong -lGL -D_IRR_COMPILE_WITH_OPENGL_")
-
-#<Add directory="convert_utf" />
-#<Add directory="utf8/source/utf8" />
-#<Add directory="utf8/source" />
-#
-#<Add library="Xxf86vm" />
-#<Add library="unwind-x86_64" />
-#<Add library="unwind" />
-##<Add directory="/usr/X11R6/lib" />
-##<Add directory="/usr/local/lib" />
-message(${UNWIND_LIBRARY})
 add_library(IrrlichtBAW STATIC ${SOURCE_FILES})
 target_link_libraries(IrrlichtBAW ${IRRBAW_DEPENDENCY_LIBRARIES} ${OPENGL_LIBRARIES} unwind Xrandr Xxf86vm X11 pthread unwind-x86_64)
 add_dependencies(IrrlichtBAW libjpeg libpng bzip2 zlib)
