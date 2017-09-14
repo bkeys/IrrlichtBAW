@@ -18,54 +18,6 @@
             "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
             "targets": [
               {
-                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
-                "fileGroups": [
-                  {
-                    "isGenerated": true,
-                    "sources": [
-                      "build/CMakeFiles/zlib",
-                      "build/CMakeFiles/zlib.rule",
-                      "build/CMakeFiles/zlib-complete.rule",
-                      "build/zlib/src/zlib-stamp/zlib-install.rule",
-                      "build/zlib/src/zlib-stamp/zlib-mkdir.rule",
-                      "build/zlib/src/zlib-stamp/zlib-download.rule",
-                      "build/zlib/src/zlib-stamp/zlib-update.rule",
-                      "build/zlib/src/zlib-stamp/zlib-patch.rule",
-                      "build/zlib/src/zlib-stamp/zlib-configure.rule",
-                      "build/zlib/src/zlib-stamp/zlib-build.rule"
-                    ]
-                  }
-                ],
-                "fullName": "zlib",
-                "name": "zlib",
-                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
-                "type": "UTILITY"
-              },
-              {
-                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
-                "fileGroups": [
-                  {
-                    "isGenerated": true,
-                    "sources": [
-                      "build/CMakeFiles/libpng",
-                      "build/CMakeFiles/libpng.rule",
-                      "build/CMakeFiles/libpng-complete.rule",
-                      "build/libpng/src/libpng-stamp/libpng-install.rule",
-                      "build/libpng/src/libpng-stamp/libpng-mkdir.rule",
-                      "build/libpng/src/libpng-stamp/libpng-download.rule",
-                      "build/libpng/src/libpng-stamp/libpng-update.rule",
-                      "build/libpng/src/libpng-stamp/libpng-patch.rule",
-                      "build/libpng/src/libpng-stamp/libpng-configure.rule",
-                      "build/libpng/src/libpng-stamp/libpng-build.rule"
-                    ]
-                  }
-                ],
-                "fullName": "libpng",
-                "name": "libpng",
-                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
-                "type": "UTILITY"
-              },
-              {
                 "artifacts": [
                   "/home/bkeys/Devel/IrrlichtBAW/build/libIrrlichtBAW.a"
                 ],
@@ -299,6 +251,104 @@
                   {
                     "isGenerated": true,
                     "sources": [
+                      "build/CMakeFiles/zlib",
+                      "build/CMakeFiles/zlib.rule",
+                      "build/CMakeFiles/zlib-complete.rule",
+                      "build/zlib/src/zlib-stamp/zlib-install.rule",
+                      "build/zlib/src/zlib-stamp/zlib-mkdir.rule",
+                      "build/zlib/src/zlib-stamp/zlib-download.rule",
+                      "build/zlib/src/zlib-stamp/zlib-update.rule",
+                      "build/zlib/src/zlib-stamp/zlib-patch.rule",
+                      "build/zlib/src/zlib-stamp/zlib-configure.rule",
+                      "build/zlib/src/zlib-stamp/zlib-build.rule"
+                    ]
+                  }
+                ],
+                "fullName": "zlib",
+                "name": "zlib",
+                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+                "type": "UTILITY"
+              },
+              {
+                "artifacts": [
+                  "/home/bkeys/Devel/IrrlichtBAW/build/HelloWorld01"
+                ],
+                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-pointer -fno-exceptions -fuse-ld=gold -msse3 -ggdb3 -std=c++03 -fstack-protector-strong -D_IRR_STATIC_LIB_ -D_DEBUG -fuse-ld=gold -fstack-protector-strong -lGL -D_IRR_COMPILE_WITH_OPENGL_ -g  ",
+                    "includePath": [
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/bzip2"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/libjpeg/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/libpng/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/source/Irrlicht/utf8/source"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/source/Irrlicht/convert_utf"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "examples_tests/01.HelloWorld/main.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "HelloWorld01",
+                "linkFlags": "-rdynamic",
+                "linkLanguageFlags": "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-pointer -fno-exceptions -fuse-ld=gold -msse3 -ggdb3 -std=c++03 -fstack-protector-strong -D_IRR_STATIC_LIB_ -D_DEBUG -fuse-ld=gold -fstack-protector-strong -lGL -D_IRR_COMPILE_WITH_OPENGL_ -g",
+                "linkLibraries": "libIrrlichtBAW.a bzip2/lib/libbz2.a libjpeg/lib/libjpeg.a libpng/src/libpng-build/libpng.a zlib/lib/libz.a -lXxf86vm -lX11 -lxRandr -lGLU -lGL",
+                "linkerLanguage": "CXX",
+                "name": "HelloWorld01",
+                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/libpng",
+                      "build/CMakeFiles/libpng.rule",
+                      "build/CMakeFiles/libpng-complete.rule",
+                      "build/libpng/src/libpng-stamp/libpng-install.rule",
+                      "build/libpng/src/libpng-stamp/libpng-mkdir.rule",
+                      "build/libpng/src/libpng-stamp/libpng-download.rule",
+                      "build/libpng/src/libpng-stamp/libpng-update.rule",
+                      "build/libpng/src/libpng-stamp/libpng-patch.rule",
+                      "build/libpng/src/libpng-stamp/libpng-configure.rule",
+                      "build/libpng/src/libpng-stamp/libpng-build.rule"
+                    ]
+                  }
+                ],
+                "fullName": "libpng",
+                "name": "libpng",
+                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
                       "build/CMakeFiles/libjpeg",
                       "build/CMakeFiles/libjpeg.rule",
                       "build/CMakeFiles/libjpeg-complete.rule",
@@ -346,7 +396,7 @@
         ]
       }
     ],
-    "cookie": "0.6737652071342113",
+    "cookie": "0.47750351539811486",
     "inReplyTo": "codemodel",
     "type": "reply"
   }

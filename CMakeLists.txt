@@ -9,18 +9,19 @@ set(CMAKE_MODULE_PATH
         ${CMAKE_SOURCE_DIR}/CMake/Dependencies
 )
 
-#include(DependencyZlib)
+find_package(OpenGL REQUIRED)
 include(DependencyBzip2)
 include(DependencyLibJpeg)
 include(DependencyLibPng)
 include(DependencyZlib)
+include(find_unwind)
+
+# Make an option to not build examples
+include(Examples)
+
 set(SOURCE_FILES
-#source/Irrlicht/C3DSMeshFileLoader.cpp
-#source/Irrlicht/CAnimatedMeshHalfLife.cpp
 source/Irrlicht/CAnimatedMeshSceneNode.cpp
-#source/Irrlicht/CB3DMeshFileLoader.cpp
 source/Irrlicht/CBillboardSceneNode.cpp
-#source/Irrlicht/CBurningShader_Raster_Reference.cpp
 source/Irrlicht/CCSMLoader.cpp
 source/Irrlicht/CCameraSceneNode.cpp
 source/Irrlicht/CColorConverter.cpp
@@ -58,12 +59,8 @@ source/Irrlicht/CIrrDeviceLinux.cpp
 source/Irrlicht/CIrrDeviceSDL.cpp
 source/Irrlicht/CIrrDeviceStub.cpp
 source/Irrlicht/CIrrDeviceWin32.cpp
-#source/Irrlicht/CLMTSMeshFileLoader.cpp
-#source/Irrlicht/CLWOMeshFileLoader.cpp
 source/Irrlicht/CLimitReadFile.cpp
 source/Irrlicht/CLogger.cpp
-#source/Irrlicht/CMS3DMeshFileLoader.cpp
-#source/Irrlicht/CMY3DMeshFileLoader.cpp
 source/Irrlicht/CMemoryFile.cpp
 source/Irrlicht/CMeshCache.cpp
 source/Irrlicht/CMeshManipulator.cpp
@@ -76,7 +73,6 @@ source/Irrlicht/COBJMeshFileLoader.cpp
 source/Irrlicht/COBJMeshWriter.cpp
 source/Irrlicht/COCTLoader.cpp
 source/Irrlicht/COSOperator.cpp
-#source/Irrlicht/COgreMeshFileLoader.cpp
 source/Irrlicht/COpenCLHandler.cpp
 source/Irrlicht/COpenGL3DTexture.cpp
 source/Irrlicht/COpenGLDriver.cpp
@@ -90,13 +86,12 @@ source/Irrlicht/COpenGLSLMaterialRenderer.cpp
 source/Irrlicht/COpenGLTexture.cpp
 source/Irrlicht/COpenGLTransformFeedback.cpp
 source/Irrlicht/COpenGLVAO.cpp
-#source/Irrlicht/CPLYMeshFileLoader.cpp
 source/Irrlicht/CPLYMeshWriter.cpp
 source/Irrlicht/CPakReader.cpp
 source/Irrlicht/CReadFile.cpp
-#source/Irrlicht/CSMFMeshFileLoader.cpp
-#source/Irrlicht/CSTLMeshFileLoader.cpp
 source/Irrlicht/CSTLMeshWriter.cpp
+source/Irrlicht/CSTLMeshFileLoader.cpp
+source/Irrlicht/CBurningShader_Raster_Reference.cpp
 source/Irrlicht/CSceneManager.cpp
 source/Irrlicht/CSceneNodeAnimatorCameraFPS.cpp
 source/Irrlicht/CSceneNodeAnimatorCameraMaya.cpp
@@ -155,7 +150,6 @@ source/Irrlicht/CZipReader.cpp
 source/Irrlicht/FW_Mutex.cpp
 source/Irrlicht/IBurningShader.cpp
 source/Irrlicht/Irrlicht.cpp
-#source/Irrlicht/MacOSX/CIrrDeviceMacOSX.mm
 source/Irrlicht/STextureSamplingParams.cpp
 source/Irrlicht/aesGladman/aescrypt.cpp
 source/Irrlicht/aesGladman/aeskey.cpp
@@ -203,12 +197,7 @@ set(CMAKE_CXX_FLAGS "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-p
 #<Add library="unwind" />
 ##<Add directory="/usr/X11R6/lib" />
 ##<Add directory="/usr/local/lib" />
-
+message(${UNWIND_LIBRARY})
 add_library(IrrlichtBAW STATIC ${SOURCE_FILES})
-message(${IRRBAW_DEPENDENCY_LIBRARIES})
-target_link_libraries(IrrlichtBAW ${IRRBAW_DEPENDENCY_LIBRARIES})
+target_link_libraries(IrrlichtBAW ${IRRBAW_DEPENDENCY_LIBRARIES} ${OPENGL_LIBRARIES} unwind Xrandr Xxf86vm X11 pthread unwind-x86_64)
 add_dependencies(IrrlichtBAW libjpeg libpng bzip2 zlib)
-
-#set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-#set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-#include(CPack)
