@@ -1,7 +1,7 @@
 #define _IRR_STATIC_LIB_
 #include <irrlicht.h>
 #include "driverChoice.h"
-
+#include <string>
 #include "../source/Irrlicht/CGeometryCreator.h"
 
 using namespace irr;

@@ -114,9 +114,9 @@ int main()
 	video::IVideoDriver* driver = device->getVideoDriver();
 
     SimpleCallBack* cb = new SimpleCallBack();
-    video::E_MATERIAL_TYPE newMaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../mesh.vert",
+    video::E_MATERIAL_TYPE newMaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("mesh.vert",
                                                         "","","", //! No Geometry or Tessellation Shaders
-                                                        "../mesh.frag",
+                                                        "mesh.frag",
                                                         3,video::EMT_SOLID, //! 3 vertices per primitive (this is tessellation shader relevant only
                                                         cb, //! Our Shader Callback
                                                         0); //! No custom user data
@@ -138,7 +138,7 @@ int main()
 	device->setEventReceiver(&receiver);
 
 	//! Test Loading of Obj
-    scene::ICPUMesh* cpumesh = smgr->getMesh("../../media/extrusionLogo_TEST_fixed.stl");
+    scene::ICPUMesh* cpumesh = smgr->getMesh("../media/extrusionLogo_TEST_fixed.stl");
     if (cpumesh)
     {
         scene::IGPUMesh* gpumesh = driver->createGPUMeshFromCPU(dynamic_cast<scene::SCPUMesh*>(cpumesh));
@@ -146,7 +146,7 @@ int main()
         smgr->addMeshSceneNode(gpumesh)->setMaterialType(newMaterialType);
         gpumesh->drop();
     }
-    cpumesh = smgr->getMesh("../../media/cow.obj");
+    cpumesh = smgr->getMesh("../media/cow.obj");
     if (cpumesh)
     {
         scene::IGPUMesh* gpumesh = driver->createGPUMeshFromCPU(dynamic_cast<scene::SCPUMesh*>(cpumesh));
@@ -219,9 +219,9 @@ int main()
 			stringw str = L"Builtin Nodes Demo - Irrlicht Engine [";
 			str += driver->getName();
 			str += "] FPS:";
-			str += driver->getFPS();
+			str += std::to_string(driver->getFPS()).c_str();
 			str += " PrimitvesDrawn:";
-			str += driver->getPrimitiveCountDrawn();
+			str += std::to_string(driver->getPrimitiveCountDrawn()).c_str();
 
 			device->setWindowCaption(str.c_str());
 			lastFPSTime = time;

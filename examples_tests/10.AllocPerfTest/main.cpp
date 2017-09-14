@@ -1,6 +1,6 @@
 #include <irrlicht.h>
 #include "driverChoice.h"
-
+#include <string>
 #include "IGPUTransientBuffer.h"
 
 using namespace irr;
@@ -111,7 +111,7 @@ int main()
 			stringw str = L"Builtin Nodes Demo - Irrlicht Engine [";
 			str += driver->getName();
 			str += "] FPS:";
-			str += driver->getFPS();
+			str += std::to_string(driver->getFPS()).c_str();
 
 			device->setWindowCaption(str.c_str());
 			lastFPSTime = time;

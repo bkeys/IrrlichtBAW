@@ -1,6 +1,6 @@
 #include <irrlicht.h>
 #include "driverChoice.h"
-
+#include <string>
 #include "../source/Irrlicht/CGeometryCreator.h"
 #include "../source/Irrlicht/COpenGLExtensionHandler.h"
 #include "../source/Irrlicht/COpenGLBuffer.h"
@@ -199,9 +199,9 @@ int main()
     }
 
     SimpleCallBack* cb = new SimpleCallBack();
-    video::E_MATERIAL_TYPE newMaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../mesh.vert",
+    video::E_MATERIAL_TYPE newMaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("mesh.vert",
                                                         "","","", //! No Geometry or Tessellation Shaders
-                                                        "../mesh.frag",
+                                                        "mesh.frag",
                                                         3,video::EMT_SOLID, //! 3 vertices per primitive (this is tessellation shader relevant only
                                                         cb, //! Our Shader Callback
                                                         0); //! No custom user data
@@ -308,9 +308,9 @@ int main()
 			stringw str = L"Builtin Nodes Demo - Irrlicht Engine [";
 			str += driver->getName();
 			str += "] FPS:";
-			str += driver->getFPS();
+			str += std::to_string(driver->getFPS()).c_str();
 			str += " PrimitvesDrawn:";
-			str += driver->getPrimitiveCountDrawn();
+			str += std::to_string(driver->getPrimitiveCountDrawn()).c_str();
 
 			device->setWindowCaption(str.c_str());
 			lastFPSTime = time;

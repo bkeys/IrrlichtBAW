@@ -164,9 +164,9 @@ int main()
     //! First need to make a material other than default to be able to draw with custom shader
     video::SMaterial material;
     material.BackfaceCulling = false; //! Triangles will be visible from both sides
-    material.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../mesh.vert",
+    material.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("mesh.vert",
                                                         "","","", //! No Geometry or Tessellation Shaders
-                                                        "../mesh.frag",
+                                                        "mesh.frag",
                                                         3,video::EMT_SOLID, //! 3 vertices per primitive (this is tessellation shader relevant only
                                                         callBack, //! No Shader Callback (we dont have any constants/uniforms to pass to the shader)
                                                         0); //! No custom user data
@@ -190,10 +190,10 @@ int main()
 	//! Test Creation Of Builtin
 	scene::IMeshSceneNode* cube = dynamic_cast<scene::IMeshSceneNode*>(smgr->addCubeSceneNode(1.f,0,-1));
     cube->setRotation(core::vector3df(45,20,15));
-    cube->getMaterial(0).setTexture(0,driver->getTexture("../../media/irrlicht2_dn.jpg"));
+    cube->getMaterial(0).setTexture(0,driver->getTexture("../media/irrlicht2_dn.jpg"));
 
 	scene::ISceneNode* billboard = smgr->addCubeSceneNode(2.f,0,-1,core::vector3df(0,0,0));
-    billboard->getMaterial(0).setTexture(0,driver->getTexture("../../media/wall.jpg"));
+    billboard->getMaterial(0).setTexture(0,driver->getTexture("../media/wall.jpg"));
 
     float cubeDistance = 0.f;
     float cubeParameterHint = 0.f;

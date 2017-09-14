@@ -2,7 +2,7 @@
 #include "driverChoice.h"
 
 #include "../source/Irrlicht/CGeometryCreator.h"
-
+#include <string>
 using namespace irr;
 using namespace core;
 
@@ -85,9 +85,9 @@ int main()
     //! First need to make a material other than default to be able to draw with custom shader
     video::SMaterial material;
     material.BackfaceCulling = false; //! Triangles will be visible from both sides
-    material.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../mesh.vert",
+    material.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("mesh.vert",
                                                         "","","", //! No Geometry or Tessellation Shaders
-                                                        "../mesh.frag",
+                                                        "mesh.frag",
                                                         3,video::EMT_SOLID, //! 3 vertices per primitive (this is tessellation shader relevant only
                                                         callBack, //! No Shader Callback (we dont have any constants/uniforms to pass to the shader)
                                                         0); //! No custom user data
@@ -111,15 +111,15 @@ int main()
 	//! Test Creation Of Builtin
 	scene::IMeshSceneNode* cube = dynamic_cast<scene::IMeshSceneNode*>(smgr->addCubeSceneNode(1.f,0,-1));
     cube->setRotation(core::vector3df(45,20,15));
-    cube->getMaterial(0).setTexture(0,driver->getTexture("../../media/irrlicht2_dn.jpg"));
+    cube->getMaterial(0).setTexture(0,driver->getTexture("../media/irrlicht2_dn.jpg"));
 
 	scene::IMeshSceneNode* sphere = dynamic_cast<scene::IMeshSceneNode*>(smgr->addSphereSceneNode(2,128));
-    sphere->getMaterial(0).setTexture(0,driver->getTexture("../../media/skydome.jpg"));
+    sphere->getMaterial(0).setTexture(0,driver->getTexture("../media/skydome.jpg"));
     sphere->getMaterial(0).MaterialType = material.MaterialType;
     sphere->setPosition(core::vector3df(4,0,0));
 
 	scene::ISceneNode* billboard = smgr->addBillboardSceneNode(0,core::dimension2df(1.f,1.f),core::vector3df(-4,0,0));
-    billboard->getMaterial(0).setTexture(0,driver->getTexture("../../media/wall.jpg"));
+    billboard->getMaterial(0).setTexture(0,driver->getTexture("../media/wall.jpg"));
 
     //scene::CGeometryCreator* geom = new scene::CGeometryCreator();
 
@@ -187,9 +187,9 @@ int main()
 			stringw str = L"Builtin Nodes Demo - Irrlicht Engine [";
 			str += driver->getName();
 			str += "] FPS:";
-			str += driver->getFPS();
+			str += std::to_string(driver->getFPS()).c_str();
 			str += " PrimitvesDrawn:";
-			str += driver->getPrimitiveCountDrawn();
+			str += std::to_string(driver->getPrimitiveCountDrawn()).c_str();
 
 			device->setWindowCaption(str.c_str());
 			lastFPSTime = time;

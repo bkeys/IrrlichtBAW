@@ -117,9 +117,9 @@ int main()
 	video::IVideoDriver* driver = device->getVideoDriver();
 
     SimpleCallBack* cb = new SimpleCallBack();
-    video::E_MATERIAL_TYPE newMaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../mesh.vert",
+    video::E_MATERIAL_TYPE newMaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("mesh.vert",
                                                         "","","", //! No Geometry or Tessellation Shaders
-                                                        "../mesh.frag",
+                                                        "mesh.frag",
                                                         3,video::EMT_SOLID, //! 3 vertices per primitive (this is tessellation shader relevant only
                                                         cb, //! Our Shader Callback
                                                         0); //! No custom user data
@@ -144,7 +144,7 @@ int main()
 	scene::ISceneNode* instancesToRemove[kInstanceSquareSize*kInstanceSquareSize] = {0};
 
 	//! Test Loading of Obj
-    scene::ICPUMesh* cpumesh = smgr->getMesh("../../media/dwarf.x");
+    scene::ICPUMesh* cpumesh = smgr->getMesh("../media/dwarf.x");
     if (cpumesh&&cpumesh->getMeshType()==scene::EMT_ANIMATED_SKINNED)
     {
         scene::ISkinnedMeshSceneNode* anode = 0;
@@ -185,7 +185,7 @@ int main()
 		if (time-lastFPSTime > 1000)
 		{
 			std::wostringstream str;
-			str << L"Builtin Nodes Demo - Irrlicht Engine [" << driver->getName() << "] FPS:" << driver->getFPS() << " PrimitvesDrawn:" << driver->getPrimitiveCountDrawn();
+			str << L"Builtin Nodes Demo - Irrlicht Engine [" << driver->getName() << "] FPS:" << std::to_string(driver->getFPS()).c_str() << " PrimitvesDrawn:" << std::to_string(driver->getPrimitiveCountDrawn()).c_str();
 
 			device->setWindowCaption(str.str());
 			lastFPSTime = time;

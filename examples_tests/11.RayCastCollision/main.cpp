@@ -1,6 +1,6 @@
 #include <irrlicht.h>
 #include "driverChoice.h"
-
+#include <string>
 #include "../source/Irrlicht/CGeometryCreator.h"
 
 using namespace irr;
@@ -85,7 +85,7 @@ int main()
 	scene::IMeshSceneNode* cube = dynamic_cast<scene::IMeshSceneNode*>(smgr->addCubeSceneNode(1.f,0,-1));
     cube->setRotation(core::vector3df(45,20,15));
     cube->setMaterialFlag(video::EMF_BACK_FACE_CULLING,false);
-    cube->getMaterial(0).setTexture(0,driver->getTexture("../../media/irrlicht2_dn.jpg"));
+    cube->getMaterial(0).setTexture(0,driver->getTexture("../media/irrlicht2_dn.jpg"));
 	core::SCompoundCollider* compound = new core::SCompoundCollider();
 	compound->AddBox(core::SAABoxCollider(cube->getBoundingBox()));
 	core::SColliderData collData;
@@ -96,7 +96,7 @@ int main()
 
 	scene::IMeshSceneNode* sphere = dynamic_cast<scene::IMeshSceneNode*>(smgr->addSphereSceneNode(2,32));
     sphere->setMaterialFlag(video::EMF_BACK_FACE_CULLING,false);
-    sphere->getMaterial(0).setTexture(0,driver->getTexture("../../media/skydome.jpg"));
+    sphere->getMaterial(0).setTexture(0,driver->getTexture("../media/skydome.jpg"));
     sphere->getMaterial(0).MaterialType = material.MaterialType;
     sphere->setPosition(core::vector3df(4,0,0));
 	compound = new core::SCompoundCollider();
@@ -141,9 +141,9 @@ int main()
 			stringw str = L"Builtin Nodes Demo - Irrlicht Engine [";
 			str += driver->getName();
 			str += "] FPS:";
-			str += driver->getFPS();
+			str += std::to_string(driver->getFPS()).c_str();
 			str += " PrimitvesDrawn:";
-			str += driver->getPrimitiveCountDrawn();
+			str += std::to_string(driver->getPrimitiveCountDrawn()).c_str();
 
 			device->setWindowCaption(str.c_str());
 			lastFPSTime = time;

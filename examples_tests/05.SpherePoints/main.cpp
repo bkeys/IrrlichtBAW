@@ -21,6 +21,7 @@
 */
 #include <irrlicht.h>
 #include "driverChoice.h"
+#include <string>
 
 /**
 This example shows how to:
@@ -85,9 +86,9 @@ int main()
     //! First need to make a material other than default to be able to draw with custom shader
     video::SMaterial material;
     //material.BackfaceCulling = false; //! Triangles will be visible from both sides
-    material.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../points.vert",
+    material.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("points.vert",
                                                         "","","", //! No Geometry or Tessellation Shaders
-                                                        "../points.frag",
+                                                        "points.frag",
                                                         3,video::EMT_SOLID, //! 3 vertices per primitive (this is tessellation shader relevant only
                                                         callBack, //! No Shader Callback (we dont have any constants/uniforms to pass to the shader)
                                                         0); //! No custom user data
@@ -163,9 +164,9 @@ int main()
 			stringw str = L"Terrain Renderer - Irrlicht Engine [";
 			str += driver->getName();
 			str += "] FPS:";
-			str += driver->getFPS();
+			str += std::to_string(driver->getFPS()).c_str();
 			str += " PrimitvesDrawn:";
-			str += driver->getPrimitiveCountDrawn();
+			str += std::to_string(driver->getPrimitiveCountDrawn()).c_str();
 
 			device->setWindowCaption(str.c_str());
 			lastFPSTime = time;
