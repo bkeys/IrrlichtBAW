@@ -263,9 +263,9 @@ int main()
 	video::IVideoDriver* driver = device->getVideoDriver();
 
     SimpleCallBack* cb = new SimpleCallBack();
-    video::E_MATERIAL_TYPE newMaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../mesh.vert",
+    video::E_MATERIAL_TYPE newMaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("mesh.vert",
                                                         "","","", //! No Geometry or Tessellation Shaders
-                                                        "../mesh.frag",
+                                                        "mesh.frag",
                                                         3,video::EMT_SOLID, //! 3 vertices per primitive (this is tessellation shader relevant only
                                                         cb, //! Our Shader Callback
                                                         0); //! No custom user data
@@ -287,8 +287,8 @@ int main()
 	device->setEventReceiver(&receiver);
 
 	//! Test Loading of Obj
-    scene::ICPUMesh* cpumesh = smgr->getMesh("../../media/cow.obj");
-    scene::ICPUMesh* cpumesh2 = smgr->getMesh("../../media/yellowflower.obj");
+    scene::ICPUMesh* cpumesh = smgr->getMesh("../media/cow.obj");
+    scene::ICPUMesh* cpumesh2 = smgr->getMesh("../media/yellowflower.obj");
     if (!cpumesh||!cpumesh2)
         return 0;
 
@@ -323,7 +323,7 @@ int main()
         "outLoD1_worldViewMatCol2",
         "outLoD1_worldViewMatCol3"
     };
-    cullingXFormFeedbackShader.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("../culling.vert","","","../culling.geom","",3,video::EMT_SOLID,cb,xformFeedbackOutputs,17);
+    cullingXFormFeedbackShader.MaterialType = (video::E_MATERIAL_TYPE)driver->getGPUProgrammingServices()->addHighLevelShaderMaterialFromFiles("culling.vert","","","culling.geom","",3,video::EMT_SOLID,cb,xformFeedbackOutputs,17);
     cullingXFormFeedbackShader.RasterizerDiscard = true;
 
 
