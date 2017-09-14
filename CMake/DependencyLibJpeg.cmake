@@ -1,0 +1,16 @@
+ExternalProject_Add(libjpeg
+  DOWNLOAD_NO_PROGRESS 1
+  URL https://github.com/LuaDist/libjpeg/archive/master.zip
+  PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libjpeg
+  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_BINARY_DIR}/libjpeg 
+)
+
+set(LIBJPEG_INCLUDE_DIR "${CMAKE_BINARY_DIR}/")
+set(LIBJPEG_LIBRARY "${CMAKE_BINARY_DIR}/")
+
+include_directories(SYSTEM ${_INCLUDE_DIR})
+
+set(DMUX_DEPENDENCY_LIBRARIES
+    ${DMUX_DEPENDENCY_LIBRARIES}
+    ${LIBJPEG_LIBRARY}
+    )
