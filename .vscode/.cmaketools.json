@@ -1,0 +1,353 @@
+{
+  "variant": {
+    "label": "Debug",
+    "keywordSettings": {
+      "buildType": "debug"
+    },
+    "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+            "name": "IrrlichtBAW",
+            "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+            "targets": [
+              {
+                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/zlib",
+                      "build/CMakeFiles/zlib.rule",
+                      "build/CMakeFiles/zlib-complete.rule",
+                      "build/zlib/src/zlib-stamp/zlib-install.rule",
+                      "build/zlib/src/zlib-stamp/zlib-mkdir.rule",
+                      "build/zlib/src/zlib-stamp/zlib-download.rule",
+                      "build/zlib/src/zlib-stamp/zlib-update.rule",
+                      "build/zlib/src/zlib-stamp/zlib-patch.rule",
+                      "build/zlib/src/zlib-stamp/zlib-configure.rule",
+                      "build/zlib/src/zlib-stamp/zlib-build.rule"
+                    ]
+                  }
+                ],
+                "fullName": "zlib",
+                "name": "zlib",
+                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/libpng",
+                      "build/CMakeFiles/libpng.rule",
+                      "build/CMakeFiles/libpng-complete.rule",
+                      "build/libpng/src/libpng-stamp/libpng-install.rule",
+                      "build/libpng/src/libpng-stamp/libpng-mkdir.rule",
+                      "build/libpng/src/libpng-stamp/libpng-download.rule",
+                      "build/libpng/src/libpng-stamp/libpng-update.rule",
+                      "build/libpng/src/libpng-stamp/libpng-patch.rule",
+                      "build/libpng/src/libpng-stamp/libpng-configure.rule",
+                      "build/libpng/src/libpng-stamp/libpng-build.rule"
+                    ]
+                  }
+                ],
+                "fullName": "libpng",
+                "name": "libpng",
+                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+                "type": "UTILITY"
+              },
+              {
+                "artifacts": [
+                  "/home/bkeys/Devel/IrrlichtBAW/build/libIrrlichtBAW.a"
+                ],
+                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g  ",
+                    "includePath": [
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/bzip2"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/libjpeg/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/libpng/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/source/Irrlicht/utf8/source"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/source/Irrlicht/convert_utf"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "source/Irrlicht/bzip2/blocksort.c",
+                      "source/Irrlicht/bzip2/bzcompress.c",
+                      "source/Irrlicht/bzip2/bzlib.c",
+                      "source/Irrlicht/bzip2/crctable.c",
+                      "source/Irrlicht/bzip2/decompress.c",
+                      "source/Irrlicht/bzip2/huffman.c",
+                      "source/Irrlicht/bzip2/randtable.c",
+                      "source/Irrlicht/convert_utf/ConvertUTF.c",
+                      "source/Irrlicht/lzma/LzmaDec.c"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-pointer -fno-exceptions -fuse-ld=gold -msse3 -ggdb3 -std=c++03 -fstack-protector-strong -D_IRR_STATIC_LIB_ -D_DEBUG -fuse-ld=gold -fstack-protector-strong -lGL -D_IRR_COMPILE_WITH_OPENGL_ -g  ",
+                    "includePath": [
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/bzip2"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/libjpeg/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/build/libpng/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/include"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/source/Irrlicht/utf8/source"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/home/bkeys/Devel/IrrlichtBAW/source/Irrlicht/convert_utf"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "source/Irrlicht/CAnimatedMeshSceneNode.cpp",
+                      "source/Irrlicht/CBillboardSceneNode.cpp",
+                      "source/Irrlicht/CCSMLoader.cpp",
+                      "source/Irrlicht/CCameraSceneNode.cpp",
+                      "source/Irrlicht/CColorConverter.cpp",
+                      "source/Irrlicht/CCubeSceneNode.cpp",
+                      "source/Irrlicht/CDMFLoader.cpp",
+                      "source/Irrlicht/CDefaultSceneNodeAnimatorFactory.cpp",
+                      "source/Irrlicht/CDefaultSceneNodeFactory.cpp",
+                      "source/Irrlicht/CDepthBuffer.cpp",
+                      "source/Irrlicht/CEmptySceneNode.cpp",
+                      "source/Irrlicht/CFPSCounter.cpp",
+                      "source/Irrlicht/CFileList.cpp",
+                      "source/Irrlicht/CFileSystem.cpp",
+                      "source/Irrlicht/CGPUTransientBuffer.cpp",
+                      "source/Irrlicht/CGeometryCreator.cpp",
+                      "source/Irrlicht/CImage.cpp",
+                      "source/Irrlicht/CImageLoaderBMP.cpp",
+                      "source/Irrlicht/CImageLoaderDDS.cpp",
+                      "source/Irrlicht/CImageLoaderJPG.cpp",
+                      "source/Irrlicht/CImageLoaderPCX.cpp",
+                      "source/Irrlicht/CImageLoaderPNG.cpp",
+                      "source/Irrlicht/CImageLoaderPPM.cpp",
+                      "source/Irrlicht/CImageLoaderPSD.cpp",
+                      "source/Irrlicht/CImageLoaderRGB.cpp",
+                      "source/Irrlicht/CImageLoaderTGA.cpp",
+                      "source/Irrlicht/CImageLoaderWAL.cpp",
+                      "source/Irrlicht/CImageWriterBMP.cpp",
+                      "source/Irrlicht/CImageWriterJPG.cpp",
+                      "source/Irrlicht/CImageWriterPCX.cpp",
+                      "source/Irrlicht/CImageWriterPNG.cpp",
+                      "source/Irrlicht/CImageWriterPPM.cpp",
+                      "source/Irrlicht/CImageWriterPSD.cpp",
+                      "source/Irrlicht/CImageWriterTGA.cpp",
+                      "source/Irrlicht/CIrrDeviceConsole.cpp",
+                      "source/Irrlicht/CIrrDeviceLinux.cpp",
+                      "source/Irrlicht/CIrrDeviceSDL.cpp",
+                      "source/Irrlicht/CIrrDeviceStub.cpp",
+                      "source/Irrlicht/CIrrDeviceWin32.cpp",
+                      "source/Irrlicht/CLimitReadFile.cpp",
+                      "source/Irrlicht/CLogger.cpp",
+                      "source/Irrlicht/CMemoryFile.cpp",
+                      "source/Irrlicht/CMeshCache.cpp",
+                      "source/Irrlicht/CMeshManipulator.cpp",
+                      "source/Irrlicht/CMeshSceneNode.cpp",
+                      "source/Irrlicht/CMeshSceneNodeInstanced.cpp",
+                      "source/Irrlicht/CMountPointReader.cpp",
+                      "source/Irrlicht/CNPKReader.cpp",
+                      "source/Irrlicht/CNullDriver.cpp",
+                      "source/Irrlicht/COBJMeshFileLoader.cpp",
+                      "source/Irrlicht/COBJMeshWriter.cpp",
+                      "source/Irrlicht/COCTLoader.cpp",
+                      "source/Irrlicht/COSOperator.cpp",
+                      "source/Irrlicht/COpenCLHandler.cpp",
+                      "source/Irrlicht/COpenGL3DTexture.cpp",
+                      "source/Irrlicht/COpenGLDriver.cpp",
+                      "source/Irrlicht/COpenGLExtensionHandler.cpp",
+                      "source/Irrlicht/COpenGLFrameBuffer.cpp",
+                      "source/Irrlicht/COpenGLOcclusionQuery.cpp",
+                      "source/Irrlicht/COpenGLPersistentlyMappedBuffer.cpp",
+                      "source/Irrlicht/COpenGLQuery.cpp",
+                      "source/Irrlicht/COpenGLRenderBuffer.cpp",
+                      "source/Irrlicht/COpenGLSLMaterialRenderer.cpp",
+                      "source/Irrlicht/COpenGLTexture.cpp",
+                      "source/Irrlicht/COpenGLTransformFeedback.cpp",
+                      "source/Irrlicht/COpenGLVAO.cpp",
+                      "source/Irrlicht/CPLYMeshWriter.cpp",
+                      "source/Irrlicht/CPakReader.cpp",
+                      "source/Irrlicht/CReadFile.cpp",
+                      "source/Irrlicht/CSTLMeshWriter.cpp",
+                      "source/Irrlicht/CSceneManager.cpp",
+                      "source/Irrlicht/CSceneNodeAnimatorCameraFPS.cpp",
+                      "source/Irrlicht/CSceneNodeAnimatorCameraMaya.cpp",
+                      "source/Irrlicht/CSceneNodeAnimatorDelete.cpp",
+                      "source/Irrlicht/CSceneNodeAnimatorFlyCircle.cpp",
+                      "source/Irrlicht/CSceneNodeAnimatorFlyStraight.cpp",
+                      "source/Irrlicht/CSceneNodeAnimatorFollowSpline.cpp",
+                      "source/Irrlicht/CSceneNodeAnimatorRotation.cpp",
+                      "source/Irrlicht/CSceneNodeAnimatorTexture.cpp",
+                      "source/Irrlicht/CSkinnedMesh.cpp",
+                      "source/Irrlicht/CSkinnedMeshSceneNode.cpp",
+                      "source/Irrlicht/CSkyBoxSceneNode.cpp",
+                      "source/Irrlicht/CSkyDomeSceneNode.cpp",
+                      "source/Irrlicht/CSoftwareDriver.cpp",
+                      "source/Irrlicht/CSoftwareDriver2.cpp",
+                      "source/Irrlicht/CSoftwareTexture.cpp",
+                      "source/Irrlicht/CSoftwareTexture2.cpp",
+                      "source/Irrlicht/CSphereSceneNode.cpp",
+                      "source/Irrlicht/CTRFlat.cpp",
+                      "source/Irrlicht/CTRFlatWire.cpp",
+                      "source/Irrlicht/CTRGouraud.cpp",
+                      "source/Irrlicht/CTRGouraud2.cpp",
+                      "source/Irrlicht/CTRGouraudAlpha2.cpp",
+                      "source/Irrlicht/CTRGouraudAlphaNoZ2.cpp",
+                      "source/Irrlicht/CTRGouraudWire.cpp",
+                      "source/Irrlicht/CTRNormalMap.cpp",
+                      "source/Irrlicht/CTRStencilShadow.cpp",
+                      "source/Irrlicht/CTRTextureBlend.cpp",
+                      "source/Irrlicht/CTRTextureDetailMap2.cpp",
+                      "source/Irrlicht/CTRTextureFlat.cpp",
+                      "source/Irrlicht/CTRTextureFlatWire.cpp",
+                      "source/Irrlicht/CTRTextureGouraud.cpp",
+                      "source/Irrlicht/CTRTextureGouraud2.cpp",
+                      "source/Irrlicht/CTRTextureGouraudAdd.cpp",
+                      "source/Irrlicht/CTRTextureGouraudAdd2.cpp",
+                      "source/Irrlicht/CTRTextureGouraudAddNoZ2.cpp",
+                      "source/Irrlicht/CTRTextureGouraudAlpha.cpp",
+                      "source/Irrlicht/CTRTextureGouraudAlphaNoZ.cpp",
+                      "source/Irrlicht/CTRTextureGouraudNoZ.cpp",
+                      "source/Irrlicht/CTRTextureGouraudNoZ2.cpp",
+                      "source/Irrlicht/CTRTextureGouraudVertexAlpha2.cpp",
+                      "source/Irrlicht/CTRTextureGouraudWire.cpp",
+                      "source/Irrlicht/CTRTextureLightMap2_Add.cpp",
+                      "source/Irrlicht/CTRTextureLightMap2_M1.cpp",
+                      "source/Irrlicht/CTRTextureLightMap2_M2.cpp",
+                      "source/Irrlicht/CTRTextureLightMap2_M4.cpp",
+                      "source/Irrlicht/CTRTextureLightMapGouraud2_M4.cpp",
+                      "source/Irrlicht/CTRTextureWire2.cpp",
+                      "source/Irrlicht/CTarReader.cpp",
+                      "source/Irrlicht/CVideoModeList.cpp",
+                      "source/Irrlicht/CWADReader.cpp",
+                      "source/Irrlicht/CWriteFile.cpp",
+                      "source/Irrlicht/CXMeshFileLoader.cpp",
+                      "source/Irrlicht/CZBuffer.cpp",
+                      "source/Irrlicht/CZipReader.cpp",
+                      "source/Irrlicht/FW_Mutex.cpp",
+                      "source/Irrlicht/IBurningShader.cpp",
+                      "source/Irrlicht/Irrlicht.cpp",
+                      "source/Irrlicht/STextureSamplingParams.cpp",
+                      "source/Irrlicht/aesGladman/aescrypt.cpp",
+                      "source/Irrlicht/aesGladman/aeskey.cpp",
+                      "source/Irrlicht/aesGladman/aestab.cpp",
+                      "source/Irrlicht/aesGladman/fileenc.cpp",
+                      "source/Irrlicht/aesGladman/hmac.cpp",
+                      "source/Irrlicht/aesGladman/prng.cpp",
+                      "source/Irrlicht/aesGladman/pwd2key.cpp",
+                      "source/Irrlicht/aesGladman/sha1.cpp",
+                      "source/Irrlicht/aesGladman/sha2.cpp",
+                      "source/Irrlicht/coreutil.cpp",
+                      "source/Irrlicht/os.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libIrrlichtBAW.a",
+                "linkerLanguage": "CXX",
+                "name": "IrrlichtBAW",
+                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+                "type": "STATIC_LIBRARY"
+              },
+              {
+                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/libjpeg",
+                      "build/CMakeFiles/libjpeg.rule",
+                      "build/CMakeFiles/libjpeg-complete.rule",
+                      "build/libjpeg/src/libjpeg-stamp/libjpeg-install.rule",
+                      "build/libjpeg/src/libjpeg-stamp/libjpeg-mkdir.rule",
+                      "build/libjpeg/src/libjpeg-stamp/libjpeg-download.rule",
+                      "build/libjpeg/src/libjpeg-stamp/libjpeg-update.rule",
+                      "build/libjpeg/src/libjpeg-stamp/libjpeg-patch.rule",
+                      "build/libjpeg/src/libjpeg-stamp/libjpeg-configure.rule",
+                      "build/libjpeg/src/libjpeg-stamp/libjpeg-build.rule"
+                    ]
+                  }
+                ],
+                "fullName": "libjpeg",
+                "name": "libjpeg",
+                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/home/bkeys/Devel/IrrlichtBAW/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/bzip2",
+                      "build/CMakeFiles/bzip2.rule",
+                      "build/CMakeFiles/bzip2-complete.rule",
+                      "build/bzip2/src/bzip2-stamp/bzip2-install.rule",
+                      "build/bzip2/src/bzip2-stamp/bzip2-mkdir.rule",
+                      "build/bzip2/src/bzip2-stamp/bzip2-download.rule",
+                      "build/bzip2/src/bzip2-stamp/bzip2-update.rule",
+                      "build/bzip2/src/bzip2-stamp/bzip2-patch.rule",
+                      "build/bzip2/src/bzip2-stamp/bzip2-configure.rule",
+                      "build/bzip2/src/bzip2-stamp/bzip2-build.rule"
+                    ]
+                  }
+                ],
+                "fullName": "bzip2",
+                "name": "bzip2",
+                "sourceDirectory": "/home/bkeys/Devel/IrrlichtBAW",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.6737652071342113",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}

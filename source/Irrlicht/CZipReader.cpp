@@ -23,11 +23,7 @@ extern "C" void bz_internal_error(int errorCode)
 
 #include "IrrCompileConfig.h"
 #ifdef _IRR_COMPILE_WITH_ZLIB_
-	#ifndef _IRR_USE_NON_SYSTEM_ZLIB_
 	#include <zlib.h> // use system lib
-	#else
-	#include "zlib/zlib.h"
-	#endif
 
 	#ifdef _IRR_COMPILE_WITH_ZIP_ENCRYPTION_
 	#include "aesGladman/fileenc.h"

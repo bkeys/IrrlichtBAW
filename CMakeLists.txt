@@ -9,10 +9,11 @@ set(CMAKE_MODULE_PATH
         ${CMAKE_SOURCE_DIR}/CMake/Dependencies
 )
 
-include(DependencyZlib)
+#include(DependencyZlib)
 include(DependencyBzip2)
-#include(DependencyLibJpeg)
+include(DependencyLibJpeg)
 include(DependencyLibPng)
+include(DependencyZlib)
 set(SOURCE_FILES
 #source/Irrlicht/C3DSMeshFileLoader.cpp
 #source/Irrlicht/CAnimatedMeshHalfLife.cpp
@@ -174,90 +175,17 @@ source/Irrlicht/bzip2/huffman
 source/Irrlicht/bzip2/randtable
 source/Irrlicht/convert_utf/ConvertUTF
 source/Irrlicht/coreutil.cpp
-#source/Irrlicht/jpeglib/jaricom
-#source/Irrlicht/jpeglib/jcapimin
-#source/Irrlicht/jpeglib/jcapistd
-#source/Irrlicht/jpeglib/jcarith
-#source/Irrlicht/jpeglib/jccoefct
-#source/Irrlicht/jpeglib/jccolor
-#source/Irrlicht/jpeglib/jcdctmgr
-#source/Irrlicht/jpeglib/jchuff
-#source/Irrlicht/jpeglib/jcinit
-#source/Irrlicht/jpeglib/jcmainct
-#source/Irrlicht/jpeglib/jcmarker
-#source/Irrlicht/jpeglib/jcmaster
-#source/Irrlicht/jpeglib/jcomapi
-#source/Irrlicht/jpeglib/jcparam
-#source/Irrlicht/jpeglib/jcprepct
-#source/Irrlicht/jpeglib/jcsample
-#source/Irrlicht/jpeglib/jctrans
-#source/Irrlicht/jpeglib/jdapimin
-#source/Irrlicht/jpeglib/jdapistd
-#source/Irrlicht/jpeglib/jdarith
-#source/Irrlicht/jpeglib/jdatadst
-#source/Irrlicht/jpeglib/jdatasrc
-#source/Irrlicht/jpeglib/jdcoefct
-#source/Irrlicht/jpeglib/jdcolor
-#source/Irrlicht/jpeglib/jddctmgr
-#source/Irrlicht/jpeglib/jdhuff
-#source/Irrlicht/jpeglib/jdinput
-#source/Irrlicht/jpeglib/jdmainct
-#source/Irrlicht/jpeglib/jdmarker
-#source/Irrlicht/jpeglib/jdmaster
-#source/Irrlicht/jpeglib/jdmerge
-#source/Irrlicht/jpeglib/jdpostct
-#source/Irrlicht/jpeglib/jdsample
-#source/Irrlicht/jpeglib/jdtrans
-#source/Irrlicht/jpeglib/jerror
-#source/Irrlicht/jpeglib/jfdctflt
-#source/Irrlicht/jpeglib/jfdctfst
-#source/Irrlicht/jpeglib/jfdctint
-#source/Irrlicht/jpeglib/jidctflt
-#source/Irrlicht/jpeglib/jidctfst
-#source/Irrlicht/jpeglib/jidctint
-#source/Irrlicht/jpeglib/jmemmgr
-#source/Irrlicht/jpeglib/jmemnobs
-#source/Irrlicht/jpeglib/jquant1
-#source/Irrlicht/jpeglib/jquant2
-#source/Irrlicht/jpeglib/jutils
-source/Irrlicht/libpng/png
-source/Irrlicht/libpng/pngerror
-source/Irrlicht/libpng/pngget
-source/Irrlicht/libpng/pngmem
-source/Irrlicht/libpng/pngpread
-source/Irrlicht/libpng/pngread
-source/Irrlicht/libpng/pngrio
-source/Irrlicht/libpng/pngrtran
-source/Irrlicht/libpng/pngrutil
-source/Irrlicht/libpng/pngset
-source/Irrlicht/libpng/pngtrans
-source/Irrlicht/libpng/pngwio
-source/Irrlicht/libpng/pngwrite
-source/Irrlicht/libpng/pngwtran
-source/Irrlicht/libpng/pngwutil
 source/Irrlicht/lzma/LzmaDec
 source/Irrlicht/os.cpp
-source/Irrlicht/zlib/adler32
-source/Irrlicht/zlib/compress
-source/Irrlicht/zlib/crc32
-source/Irrlicht/zlib/deflate
-source/Irrlicht/zlib/inffast
-source/Irrlicht/zlib/inflate
-source/Irrlicht/zlib/inftrees
-source/Irrlicht/zlib/trees
-source/Irrlicht/zlib/uncompr
-source/Irrlicht/zlib/zutil
 )
 
 include_directories(
   SYSTEM ${CMAKE_SOURCE_DIR}/include
-  SYSTEM ${LIBJPEG_INCLUDE_DIR}
   SYSTEM ${CMAKE_SOURCE_DIR}/source/Irrlicht/utf8/source
   SYSTEM ${CMAKE_SOURCE_DIR}/source/Irrlicht/convert_utf
 )
 
 #aesGladman
-#libpng
 #utf8
 #unwind
 
@@ -266,9 +194,6 @@ include_directories(
 
 set(CMAKE_CXX_FLAGS "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-pointer -fno-exceptions -fuse-ld=gold -msse3 -ggdb3 -std=c++03 -fstack-protector-strong -D_IRR_STATIC_LIB_ -D_DEBUG -fuse-ld=gold -fstack-protector-strong -lGL -D_IRR_COMPILE_WITH_OPENGL_")
 
-#<Add directory="zlib" />
-#<Add directory="libpng" />
-#<Add directory="../Irrlicht" />
 #<Add directory="convert_utf" />
 #<Add directory="utf8/source/utf8" />
 #<Add directory="utf8/source" />
@@ -279,8 +204,11 @@ set(CMAKE_CXX_FLAGS "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-p
 ##<Add directory="/usr/X11R6/lib" />
 ##<Add directory="/usr/local/lib" />
 
-add_library(IrrlichtBAW ${SOURCE_FILES})
+add_library(IrrlichtBAW STATIC ${SOURCE_FILES})
+message(${IRRBAW_DEPENDENCY_LIBRARIES})
+target_link_libraries(IrrlichtBAW ${IRRBAW_DEPENDENCY_LIBRARIES})
+add_dependencies(IrrlichtBAW libjpeg libpng bzip2 zlib)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+#set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+#set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+#include(CPack)
