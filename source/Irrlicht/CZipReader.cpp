@@ -32,7 +32,7 @@ extern "C" void bz_internal_error(int errorCode)
 	#ifndef _IRR_USE_NON_SYSTEM_BZLIB_
 	#include <bzlib.h>
 	#else
-	#include "bzip2/bzlib.h"
+	#include "bzlib.h"
 	#endif
 	#endif
 	#ifdef _IRR_COMPILE_WITH_LZMA_
