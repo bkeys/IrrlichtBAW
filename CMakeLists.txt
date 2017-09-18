@@ -4,17 +4,17 @@ project(IrrlichtBAW VERSION 0.0.0)
 include(ExternalProject)
 
 set(CMAKE_MODULE_PATH
-        ${CMAKE_MODULE_PATH}
-        ${CMAKE_SOURCE_DIR}/CMake
-        ${CMAKE_SOURCE_DIR}/CMake/Dependencies
-        ${CMAKE_SOURCE_DIR}/examples_test
+${CMAKE_MODULE_PATH}
+${CMAKE_SOURCE_DIR}/CMake
+${CMAKE_SOURCE_DIR}/CMake/Dependencies
+${CMAKE_SOURCE_DIR}/examples_test
 )
 
 find_package(OpenGL REQUIRED)
-include(DependencyBzip2)
-include(DependencyLibJpeg)
-include(DependencyLibPng)
-include(DependencyZlib)
+#include(DependencyBzip2)
+#include(DependencyLibJpeg)
+#include(DependencyLibPng)
+#include(DependencyZlib)
 
 # Make an option to not build examples
 include(Examples)
@@ -164,6 +164,94 @@ source/Irrlicht/convert_utf/ConvertUTF
 source/Irrlicht/coreutil.cpp
 source/Irrlicht/lzma/LzmaDec
 source/Irrlicht/os.cpp
+
+source/Irrlicht/zlib/adler32.c
+source/Irrlicht/zlib/compress.c
+source/Irrlicht/zlib/crc32.c
+source/Irrlicht/zlib/deflate.c
+source/Irrlicht/zlib/gzclose.c
+source/Irrlicht/zlib/gzlib.c
+source/Irrlicht/zlib/gzread.c
+source/Irrlicht/zlib/gzwrite.c
+source/Irrlicht/zlib/inflate.c
+source/Irrlicht/zlib/infback.c
+source/Irrlicht/zlib/inftrees.c
+source/Irrlicht/zlib/inffast.c
+source/Irrlicht/zlib/trees.c
+source/Irrlicht/zlib/uncompr.c
+source/Irrlicht/zlib/zutil.c
+
+source/Irrlicht/libpng/png.c
+source/Irrlicht/libpng/pngerror.c
+source/Irrlicht/libpng/pngget.c
+source/Irrlicht/libpng/pngmem.c
+source/Irrlicht/libpng/pngpread.c
+source/Irrlicht/libpng/pngread.c
+source/Irrlicht/libpng/pngrio.c
+source/Irrlicht/libpng/pngrtran.c
+source/Irrlicht/libpng/pngrutil.c
+source/Irrlicht/libpng/pngset.c
+source/Irrlicht/libpng/pngtrans.c
+source/Irrlicht/libpng/pngwio.c
+source/Irrlicht/libpng/pngwrite.c
+source/Irrlicht/libpng/pngwtran.c
+source/Irrlicht/libpng/pngwutil.c
+
+source/Irrlicht/jpeglib/jaricom.c
+source/Irrlicht/jpeglib/jcapimin.c
+source/Irrlicht/jpeglib/jcapistd.c
+source/Irrlicht/jpeglib/jcarith.c
+source/Irrlicht/jpeglib/jccoefct.c
+source/Irrlicht/jpeglib/jccolor.c
+source/Irrlicht/jpeglib/jcdctmgr.c
+source/Irrlicht/jpeglib/jchuff.c
+source/Irrlicht/jpeglib/jcinit.c
+source/Irrlicht/jpeglib/jcmainct.c
+source/Irrlicht/jpeglib/jcmarker.c
+source/Irrlicht/jpeglib/jcmaster.c
+source/Irrlicht/jpeglib/jcomapi.c
+source/Irrlicht/jpeglib/jcparam.c
+source/Irrlicht/jpeglib/jcprepct.c
+source/Irrlicht/jpeglib/jcsample.c
+source/Irrlicht/jpeglib/jctrans.c
+source/Irrlicht/jpeglib/jdapimin.c
+source/Irrlicht/jpeglib/jdapistd.c
+source/Irrlicht/jpeglib/jdarith.c
+source/Irrlicht/jpeglib/jdatadst.c
+source/Irrlicht/jpeglib/jdatasrc.c
+source/Irrlicht/jpeglib/jdcoefct.c
+source/Irrlicht/jpeglib/jdcolor.c
+source/Irrlicht/jpeglib/jddctmgr.c
+source/Irrlicht/jpeglib/jdhuff.c
+source/Irrlicht/jpeglib/jdinput.c
+source/Irrlicht/jpeglib/jdmainct.c
+source/Irrlicht/jpeglib/jdmarker.c
+source/Irrlicht/jpeglib/jdmaster.c
+source/Irrlicht/jpeglib/jdmerge.c
+source/Irrlicht/jpeglib/jdpostct.c
+source/Irrlicht/jpeglib/jdsample.c
+source/Irrlicht/jpeglib/jdtrans.c
+source/Irrlicht/jpeglib/jerror.c
+source/Irrlicht/jpeglib/jfdctflt.c
+source/Irrlicht/jpeglib/jfdctfst.c
+source/Irrlicht/jpeglib/jfdctint.c
+source/Irrlicht/jpeglib/jidctflt.c
+source/Irrlicht/jpeglib/jidctfst.c
+source/Irrlicht/jpeglib/jidctint.c
+source/Irrlicht/jpeglib/jmemmgr.c
+source/Irrlicht/jpeglib/jmemnobs.c
+source/Irrlicht/jpeglib/jquant1.c
+source/Irrlicht/jpeglib/jquant2.c
+source/Irrlicht/jpeglib/jutils.c
+
+source/Irrlicht/bzip2/blocksort.c
+source/Irrlicht/bzip2/bzcompress.c
+source/Irrlicht/bzip2/bzlib.c
+source/Irrlicht/bzip2/decompress.c
+source/Irrlicht/bzip2/huffman.c
+source/Irrlicht/bzip2/randtable.c
+source/Irrlicht/bzip2/crctable.c
+
 )
 
 include_directories(
@@ -172,7 +260,8 @@ include_directories(
   SYSTEM ${CMAKE_SOURCE_DIR}/source/Irrlicht/convert_utf
 )
 
-set(CMAKE_CXX_FLAGS "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-pointer -fno-exceptions -fuse-ld=gold -msse3 -ggdb3 -std=c++03 -fstack-protector-strong -D_IRR_STATIC_LIB_ -D_DEBUG -fuse-ld=gold -fstack-protector-strong -lGL -D_IRR_COMPILE_WITH_OPENGL_")
+#SET(IRRBAW_DEPENDENCY_LIBRARIES "-Wl,--export-all-symbols ${IRRBAW_DEPENDENCY_LIBRARIES}")
+set(CMAKE_CXX_FLAGS "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-pointer -fno-exceptions -msse3 -ggdb3 -std=c++03 -fstack-protector-strong -D_IRR_STATIC_LIB_ -D_DEBUG -fstack-protector-strong -lGL -D_IRR_COMPILE_WITH_OPENGL_")
+#set(CMAKE_CXX_FLAGS "-Wextra -Wall -g -W -Wno-unused-parameter -fno-omit-frame-pointer -fno-exceptions -fuse-ld=gold -msse3 -ggdb3 -std=c++03 -fstack-protector-strong -D_IRR_STATIC_LIB_ -D_DEBUG -fuse-ld=gold -fstack-protector-strong -lGL -D_IRR_COMPILE_WITH_OPENGL_")
 add_library(IrrlichtBAW STATIC ${SOURCE_FILES})
 target_link_libraries(IrrlichtBAW ${IRRBAW_DEPENDENCY_LIBRARIES} ${OPENGL_LIBRARIES} unwind Xrandr Xxf86vm X11 pthread unwind-x86_64)
-add_dependencies(IrrlichtBAW libjpeg libpng bzip2 zlib)
